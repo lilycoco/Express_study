@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const recipientSchema = new Schema({
   email: String,
-  responded: { type: Boolean, defaultlt: false }
+  responded: { type: Boolean, default: false }
 });
 
-mongoose.model("surveys", recipientSchema);
+mongoose.exports = recipientSchema;
