@@ -6,4 +6,4 @@ const recipientSchema = new Schema({
   responded: { type: Boolean, default: false }
 });
 
-mongoose.exports = recipientSchema;
+module.exports = recipientSchema;
