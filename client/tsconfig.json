@@ -38,11 +38,7 @@
   },
   "exclude": [
     "node_modules",
-    "next.config.js",
-    "webpack.config.js",
-    "out",
-    ".next",
-    "server.js"
+    "build"
   ],
   "include": [
     "**/*.ts",
