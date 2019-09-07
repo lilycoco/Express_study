@@ -59,5 +59,8 @@
       "git add"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/lodash": "^4.14.138",
+    "@types/redux-form": "^8.1.5"
+  }
 }
