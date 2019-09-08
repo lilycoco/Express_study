@@ -1,5 +1,5 @@
 import { Request, Response, Application } from 'express'
-import * as passport from 'passport'
+import passport from 'passport'
 
 export default (app: Application) => {
   app.get(
