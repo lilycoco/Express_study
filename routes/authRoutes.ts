@@ -1,6 +1,7 @@
-import * as passport from "passport"
+import { Request, Response, Application } from 'express'
+import * as passport from 'passport'
 
-export default (app: any) => {
+export default (app: Application) => {
   app.get(
     '/auth/google',
     passport.authenticate('google', {
@@ -8,16 +9,20 @@ export default (app: any) => {
     }),
   )
 
-  app.get('/auth/google/callback', passport.authenticate('google'), (req: any, res: any) => {
-    res.redirect('/surveys')
-  })
+  app.get(
+    '/auth/google/callback',
+    passport.authenticate('google'),
+    (req: Request, res: Response) => {
+      res.redirect('/surveys')
+    },
+  )
 
-  app.get('/api/logout', (req: any, res: any) => {
+  app.get('/api/logout', (req: Request, res: Response) => {
     req.logout()
     res.redirect('/')
   })
-  
-  app.get('/api/current_user', (req: any, res: any) => {
+
+  app.get('/api/current_user', (req: Request, res: Response) => {
     res.send(req.user)
   })
 }

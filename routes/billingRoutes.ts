@@ -1,10 +1,11 @@
+import { Response, Application } from 'express'
 import keys from '../config/keys'
 import Stripe from 'stripe'
 const stripe = new Stripe(keys.stripeSecretKey || '')
 import requireLogin from '../middlewares/requireLogin'
 
-export default (app: any) => {
-  app.post('/api/stripe', requireLogin, async (req: any, res: any) => {
+export default (app: Application) => {
+  app.post('/api/stripe', requireLogin, async (req: any, res: Response) => {
     await stripe.charges.create({
       amount: 500,
       currency: 'usd',
