@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src", 
+    "outDir": "./build",
+    "target": "es6",
+    "incremental": true,
+    "removeComments": false,
+    "downlevelIteration": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "module": "esnext",
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "noEmit": true,
+    "lib": [
+      "es2019",
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ]
+}
