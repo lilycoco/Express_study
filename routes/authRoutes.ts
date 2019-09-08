@@ -12,7 +12,7 @@ export default (app: Application) => {
   app.get(
     '/auth/google/callback',
     passport.authenticate('google'),
-    (req: Request, res: Response) => {
+    (_req: Request, res: Response) => {
       res.redirect('/surveys')
     },
   )
