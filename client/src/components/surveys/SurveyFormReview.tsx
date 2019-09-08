@@ -7,19 +7,21 @@ import { withRouter } from 'react-router-dom'
 import * as actions from '../../actions'
 
 const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }: any) => {
-  const reviewFields = _.map(formFields, ({ name, label }) => {
-    return (
-      <div key={name}>
-        <label>{label}</label>
-        <div>{formValues[name]}</div>
-      </div>
-    )
-  })
+  const reviewFields = () => {
+    return _.map(formFields, ({ name, label }) => {
+      return (
+        <div key={name}>
+          <label>{label}</label>
+          <div>{formValues[name]}</div>
+        </div>
+      )
+    })
+  }
 
   return (
     <div>
       <h5>Please confirm your entries</h5>
-      {reviewFields}
+      {reviewFields()}
       <button className='yellow darken-3 white-text btn-flat' onClick={onCancel}>
         back
       </button>
@@ -33,7 +35,7 @@ const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }: any) 
   )
 }
 
-function mapStateToProps(state: any) {
+const mapStateToProps = (state: any) => {
   console.log(state)
   return {
     formValues: state.form.surveyForm.values,

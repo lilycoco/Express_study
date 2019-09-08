@@ -11,9 +11,9 @@ const SurveyNew = () => {
     if (showFormReview) {
       return <SurveyFormReview onCancel={() => setShowFormReview(false)} />
     }
-    return <SurveyForm onSurveySubmit={() => setShowFormReview(true)} />
+    return <SurveyForm onSubmit={() => setShowFormReview(true)} />
   }
-  return <div>{renderContent}</div>
+  return <div>{renderContent()}</div>
 }
 
 export default reduxForm({
