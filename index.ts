@@ -1,14 +1,18 @@
-import express, { Request, Response } from 'express';
+import express, { Request, Response } from 'express'
 import mongoose from 'mongoose'
 import cookieSession from 'cookie-session'
 import passport from 'passport'
 import bodyParser from 'body-parser'
 import keys from './config/keys'
-import authRoutes from './routes/authRoutes';
-import billingRoutes from './routes/billingRoutes';
-import surveyRoutes from './routes/surveyRoutes';
+import authRoutes from './routes/authRoutes'
+import billingRoutes from './routes/billingRoutes'
+import surveyRoutes from './routes/surveyRoutes'
 
-mongoose.connect(keys.mongoURI || '')
+require('./models/User')
+require('./models/Survey')
+require('./services/passport')
+
+mongoose.connect(keys.mongoURI || '', { useNewUrlParser: true })
 const app = express()
 
 app.use(bodyParser.json())
