@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
+  "homepage": "https://github.com/lilycoco/Express_study",
   "engines": {
     "node": "10.16.0",
     "npm": "5.0.3"
   },
   "scripts": {
-    "start": "node index.ts",
-    "server": "nodemon index.ts",
+    "start": "ts-node index.ts",
+    "server": "ts-node index.ts",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
@@ -42,7 +43,8 @@
     "sendgrid": "^5.2.3",
     "stripe": "^7.8.0",
     "ts-node": "^8.3.0",
-    "typescript": "^3.6.2"
+    "ts-node-dev": "^1.0.0-pre.42",
+    "typescript": "^3.5.3"
   },
   "devDependencies": {
     "@types/cookie-session": "^2.0.37",
