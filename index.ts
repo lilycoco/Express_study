@@ -8,11 +8,12 @@ import authRoutes from './routes/authRoutes'
 import billingRoutes from './routes/billingRoutes'
 import surveyRoutes from './routes/surveyRoutes'
 
+mongoose.connect(keys.mongoURI || '', { useNewUrlParser: true })
+
 require('./models/User')
 require('./models/Survey')
 require('./services/passport')
 
-mongoose.connect(keys.mongoURI || '', { useNewUrlParser: true })
 const app = express()
 
 app.use(bodyParser.json())
