@@ -1,6 +1,6 @@
-const keys = require("../../config/keys");
+import keys from '../../config/keys'
 
-module.exports = survey => {
+export default (survey: any) => {
   return `
     <html>
       <body>
@@ -17,5 +17,5 @@ module.exports = survey => {
         </div>
       </body>
     </html>
-  `;
-};
+  `
+}

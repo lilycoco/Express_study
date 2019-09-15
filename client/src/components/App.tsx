@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-import * as actions from '../actions'
+import { fetchUser } from '../actions'
 
 import Header from './Header'
 import Landing from './Landing'
@@ -29,5 +29,5 @@ const App = ({ fetchUser }: any) => {
 
 export default connect(
   null,
-  actions,
+  { fetchUser },
 )(App)

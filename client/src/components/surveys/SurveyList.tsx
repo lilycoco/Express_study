@@ -8,7 +8,6 @@ const SurveyList = ({ fetchSurveys, surveys }: any) => {
   })
 
   const renderSurveys = () => {
-
     return surveys
       .reverse()
       .map(
