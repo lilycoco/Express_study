@@ -1,5 +1,21 @@
-import mongoose, { Schema } from 'mongoose'
+import mongoose, { Schema, Document } from 'mongoose'
 import recipientSchema from './Recipient'
+
+export interface IRecipient extends Document {
+  email?: string
+  responded?: boolean
+}
+export interface ISurvey extends Document {
+  title?: string
+  body?: string
+  subject?: string
+  recipients?: IRecipient
+  yes?: number
+  no?: number
+  _user?: ISurvey['_id']
+  dateSent?: Date
+  lastResponded?: Date
+}
 
 const surveySchema = new Schema({
   title: String,
@@ -13,4 +29,4 @@ const surveySchema = new Schema({
   lastResponded: Date,
 })
 
-export default mongoose.model('surveys', surveySchema)
+export default mongoose.model<ISurvey>('surveys', surveySchema)
