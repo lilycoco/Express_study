@@ -7,6 +7,7 @@ import requireLogin from '../middlewares/requireLogin'
 import Mailer from '../services/Mailer'
 import surveyTemplate from '../services/emailTemplates/surveyTemplate'
 import mongoose from 'mongoose'
+import { ISurvey } from '../models/Survey'
 
 export default (app: Application) => {
   const Survey = mongoose.model('surveys')
@@ -56,7 +57,7 @@ export default (app: Application) => {
 
   app.post('/api/surveys', requireLogin, requireCredits, async (req: any, res: Response) => {
     const { title, subject, body, recipients } = req.body
-    const survey = new Survey({
+    const survey: ISurvey = new Survey({
       title,
       subject,
       body,

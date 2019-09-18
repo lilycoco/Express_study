@@ -1,6 +1,7 @@
 import keys from '../../config/keys'
+import {ISurvey} from '../../models/Survey'
 
-export default (survey: any) => {
+export default (survey: ISurvey) => {
   return `
     <html>
       <body>

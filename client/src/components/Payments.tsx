@@ -3,7 +3,7 @@ import StripeCheckout from 'react-stripe-checkout'
 import { connect } from 'react-redux'
 import * as actions from '../actions'
 
-const Payments = ({ handleToken }: any) => (
+const Payments = ({ handleToken }: { handleToken: (token: any) => void }) => (
   <StripeCheckout
     name='Emaily'
     description='$5 for 5 email credits'

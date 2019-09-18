@@ -8,7 +8,7 @@ import Landing from './Landing'
 import Dashboard from './Dashboard'
 import SurveyNew from './surveys/SurveyNew'
 
-const App = ({ fetchUser }: any) => {
+const App = ({ fetchUser }: { fetchUser: () => void }) => {
   useEffect(() => {
     fetchUser()
   })
